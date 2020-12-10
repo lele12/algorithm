@@ -12,6 +12,7 @@ void backtracking(vector<int>& nums, int level, vector<vector<int>>& ans){
 
     for (int i = level; i < nums.size(); i++){
         std::swap(nums[i], nums[level]);
+        std::cout << "i:" << i << "level:" << level << "  "<< nums[0]<< "  "<< nums[1]<< "  "<< nums[2] <<  std::endl;
         backtracking(nums, level + 1, ans);
         std::swap(nums[i], nums[level]);
     }
