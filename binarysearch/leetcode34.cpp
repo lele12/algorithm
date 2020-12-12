@@ -54,6 +54,6 @@ int main()
     int target = 9;
     vector<int> re =  searchRange(nums, target);
     cout << re[0] << ' ' << re[1];
-    system("pause");
+    // system("pause");
     return 0;
 }

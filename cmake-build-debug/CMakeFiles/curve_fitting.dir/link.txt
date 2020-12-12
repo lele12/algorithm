@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11 -O3 -DNDEBUG   CMakeFiles/curve_fitting.dir/tree/leetcode104.cpp.o  -o curve_fitting 

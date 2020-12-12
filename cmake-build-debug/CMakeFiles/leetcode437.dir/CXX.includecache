@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/public/works/learn/algorithm/tree/leetcode437.cpp
+iostream
+-
+tree.h
+/home/public/works/learn/algorithm/tree/tree.h
+
+/home/public/works/learn/algorithm/tree/tree.h
+cmath
+-
+vector
+-
+queue
+-
+

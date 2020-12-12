@@ -1,0 +1,9 @@
+cmake_minimum_required(VERSION 3.12)
+
+project(algorithm)
+
+set(CMAKE_CXX_FLAGS "-std=c++11")
+set(CMAKE_BUILD_TYPE "Debug")
+
+add_executable(leetcode101 tree/leetcode101.cpp)
+

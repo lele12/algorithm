@@ -1,5 +1,6 @@
-#include <iostream>
-#include "tree.h"
+#include <cmath>
+#include <vector>
+#include <queue>
 
 using namespace std;
 
@@ -75,15 +76,4 @@ int maxDepth(TreeNode* root){
         return 0;
     }
     return 1 + max(maxDepth(root->left), maxDepth(root->right));
-}
-
-
-int main(){
-    vector<int> nums = {3, 9, 20, -1, -1, 15, 7};
-    TreeNode *root;
-    int i = 0;
-    makeTree(root, nums, i);
-    layer_order(root);
-//    system("pause");
-    return 0;
 }
