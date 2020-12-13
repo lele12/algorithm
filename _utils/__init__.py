@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 """
-    @header __init__.py.py
-    @author fosaken
-    @date   2020/12/12
-    @abstract:
+    @Header __init__.py.py
+    @Author fosaken
+    @Date   2020/12/12
+    @Abstract:
 """
 from .utils import printError, timer, testMyFunc
