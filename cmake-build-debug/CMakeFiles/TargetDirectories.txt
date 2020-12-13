@@ -1,3 +1,0 @@
-/home/public/works/learn/algorithm/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/public/works/learn/algorithm/cmake-build-debug/CMakeFiles/leetcode101.dir
-/home/public/works/learn/algorithm/cmake-build-debug/CMakeFiles/edit_cache.dir

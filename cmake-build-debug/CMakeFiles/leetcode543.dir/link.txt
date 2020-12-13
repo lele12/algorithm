@@ -1,1 +1,0 @@
-/usr/bin/c++  -std=c++11 -g   CMakeFiles/leetcode543.dir/tree/leetcode543.cpp.o  -o leetcode543 
