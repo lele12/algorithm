@@ -5,5 +5,5 @@ project(algorithm)
 set(CMAKE_CXX_FLAGS "-std=c++11")
 set(CMAKE_BUILD_TYPE "Debug")
 
-add_executable(leetcode208 tree/leetcode617.cpp)
+add_executable(leetcode208 tree/leetcode572.cpp)
 
