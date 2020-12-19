@@ -44,6 +44,7 @@ bool Trie::search(string word){
             flag = false;
             break;
         }
+        p = p->child[ch-'a'];
     }
     if (!p->is_end){
         flag = false;
@@ -59,13 +60,15 @@ bool Trie::startsWith(string prefix){
             flag = false;
             break;
         }
+        p = p->child[ch-'a'];
     }
     return flag;
 }
 
 int main(){
     Trie trie;
-    trie.insert("app");
-    cout << trie.search("app");
+    trie.insert("apple");
+    cout << trie.search("apple");
+    cout << trie.startsWith("app");
     return 0;
 }
