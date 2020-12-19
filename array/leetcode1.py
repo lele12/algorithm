@@ -5,7 +5,7 @@
     @Author fosaken
     @Date   2020/12/19
     @Abstract:
-        Address: https://leetcode-cn.com/problems/two-sum/submissions/
+        Address: https://leetcode-cn.com/problems/two-sum/
 """
 
 

@@ -5,7 +5,7 @@
     @Author fosaken
     @Date   2020/12/16
     @Abstract:
-        Address: https://leetcode-cn.com/problems/word-pattern/submissions/
+        Address: https://leetcode-cn.com/problems/word-pattern/
 """
 
 
