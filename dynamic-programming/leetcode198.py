@@ -5,7 +5,7 @@
     @Author fosaken
     @Date   2020/12/17
     @Abstract:
-        Address: https://leetcode-cn.com/problems/house-robber/submissions/
+        Address: https://leetcode-cn.com/problems/house-robber/
 """
 
 from typing import List
