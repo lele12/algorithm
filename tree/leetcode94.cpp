@@ -2,6 +2,7 @@
 #include <stack>
 #include <map>
 #include <unordered_map>
+#include <algorithm>
 #include "tree.h"
 
 using namespace std;
@@ -27,6 +28,27 @@ using namespace std;
 //     return res;
 // }
 
+vector <int> postorderTraversal(TreeNode* root){
+    vector<int> res;
+    if(root == nullptr){
+        return res;
+    }
+    stack<TreeNode *> s;
+    s.push(root);
+    while(!s.empty()){
+        TreeNode *node = s.top();
+        s.pop();
+        res.push_back(node->val);
+        if (node->left){
+            s.push(node->left);
+        }
+        if(node->right){
+            s.push(node->right);
+        }
+    }
+    reverse(res.begin(), res.end());
+    return res;
+}
 vector<int> inorderTraversal(TreeNode* root){
     vector<int> res;
     if(root == nullptr){

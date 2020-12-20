@@ -1,32 +1,29 @@
 #include <iostream>
 #include <stack>
+#include <algorithm>
 #include "tree.h"
 
 using namespace std;
 
-vector<int> postorderTraversal(TreeNode* root){
+vector <int> postorderTraversal(TreeNode* root){
     vector<int> res;
     if(root == nullptr){
         return res;
     }
     stack<TreeNode *> s;
-    TreeNode * node = root;
-    while(node || !s.empty()){   
-        while(node){
-            s.push(node);
-            if (node->right){
-                s.push(node->right);
-            }
-            node = node->left;
-        }
-        node = s.top();
+    s.push(root);
+    while(!s.empty()){
+        TreeNode *node = s.top();
         s.pop();
         res.push_back(node->val);
-        // node = node->right;
-        
-        // cout << node->val << " ";
-          
+        if (node->left){
+            s.push(node->left);
+        }
+        if(node->right){
+            s.push(node->right);
+        }
     }
+    reverse(res.begin(), res.end());
     return res;
 }
 int main(){
