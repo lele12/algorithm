@@ -8,6 +8,9 @@
         Address: https://leetcode-cn.com/problems/subrectangle-queries/
 """
 
+from typing import List
+
+
 class SubrectangleQueries:
 
     def __init__(self, rectangle: List[List[int]]):
