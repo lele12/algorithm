@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 """
     @File	:	leetcode1313.py
-    @Author	:	fosken
+    @Author	:	fosaken
     @Time	:	2020/12/20 18:14:39
     @Abstract:
 

@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 """
     @File	:	leetcode1486.py
-    @Author	:	fosken
+    @Author	:	fosaken
     @Time	:	2020/12/20 17:24:29
     @Abstract:
         Address: https://leetcode-cn.com/problems/xor-operation-in-an-array/
