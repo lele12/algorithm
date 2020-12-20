@@ -45,10 +45,12 @@ vector<int> inorderTraversal(TreeNode* root){
             node = node->left;
         }
         res.push_back(node->val);
+        cout << node->val << " ";
         s.pop();
         flag[node] = 1;
         if (node->right){
-            s.push(root->right);
+            s.push(node->right);
+            node = node->right;
         }
     }
     return res;
