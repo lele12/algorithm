@@ -26,8 +26,9 @@ vector<int> preorderTraversal(TreeNode* root){
 int main(){
     TreeNode *root;
     int i = 0;
-    vector<int> nums = {3, 1, 2};
+    vector<int> nums = {3, 9, 20, -1, -1, 15, 7};
     makeTree(root, nums, i);
+    pre_order(root);
     vector<int> res = preorderTraversal(root);
     system("pause");
     return 0;
