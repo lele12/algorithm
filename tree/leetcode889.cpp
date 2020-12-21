@@ -23,6 +23,7 @@ TreeNode * build(vector<int>& pre, int pre_low, int pre_high,
     root->left = build(pre, pre_low + 1, pre_low + 1 + s, post, post_low, post_low + s);
     root->right = build(pre, pre_low + 1 + s, pre_high, post, post_low + s, post_high - 1);
     return root;
+    
 }
 TreeNode* constructFromPrePost(vector<int>& pre, vector<int>& post){
     return build(pre, 0, pre.size(), post, 0, post.size());
