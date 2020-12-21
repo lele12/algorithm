@@ -26,8 +26,29 @@ ListNode* makeList(vector<int>& nums){
     }
     return head;
 }
-TreeNode* sortedListToBST(ListNode* head){
 
+ListNode* get_mid(ListNode* left, ListNode* right){
+    ListNode *fast = left;
+    ListNode *low = left;
+    while(fast != right && fast->next != right){
+        fast = fast->next;
+        fast = fast->next;
+        low = low->next;
+    }
+    return low;
+}
+TreeNode* build(ListNode* left, ListNode* right){
+    if (left == right){
+        return nullptr;
+    }
+    ListNode *mid = get_mid(left, right);
+    TreeNode *node = new TreeNode(mid->val);
+    node->left = build(left, mid);
+    node->right = build(mid->next, right);
+    return node;
+}
+TreeNode* sortedListToBST(ListNode* head){
+    return build(head, nullptr);
 }
 
 int main(){
