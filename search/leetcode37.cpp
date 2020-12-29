@@ -5,65 +5,58 @@
 using namespace std;
 
 bool is_valid(vector<vector<char>>& board, int m, int n, char ch){
-    bool flag = true;
     for (int i = 0; i < board.size(); i++){
         if (board[i][n] == ch){
-            flag = false;
-            return flag;
+            return false;
         }
     }
     for (int i = 0; i < board[0].size(); i++){
         if (board[m][i] == ch){
-            flag = false;
-            return flag; 
+            return false;
         }
     }
     for (int i = 0; i < 3; i ++){
         for (int j = 0; j < 3; j++){
             if(board[m-m%3+i][n-n%3+j] == ch){
-            flag = false;
-            return flag; 
+                return false;
             }
         }
     }
-    return flag;
+    return true;
 }
 
-void backtrack(vector<vector<char>>& board, int m, int n, bool& flag, vector<vector<char>>& res){
-    if (flag){
-        return;
-    }
+bool backtrack(vector<vector<char>>& board, int m, int n){
     if (n == board[0].size()){
         m++;
         n = 0;
     }
     if (m == board.size()){
-        flag = true;
-        res = board;
-        return;
+        return true;
     }
     for (int i = m; i < board.size(); i++){
         for (int j = n; j < board[0].size(); j++){
-            if (board[i][j] != '.'){
-                continue;
-            }
+            if (board[i][j] != '.') {
+                return backtrack(board, i, j + 1);
+            } 
             for (int k = 0; k < 9; k ++){
                 if (!is_valid(board, i, j, '1'+k)){
                     continue;
                 }
                 board[i][j] = '1' + k;
-                backtrack(board, i, j + 1, flag, res);
+                if (backtrack(board, i, j + 1)){
+                    return true;
+                };
                 board[i][j] = '.';
             }
+            return false;
         }
     }
+    return false;
 }
 
 void solveSudoku(vector<vector<char>>& board){
-    bool flag = false;
     vector<vector<char>> res;
-    backtrack(board, 0, 0, flag, res);
-    board = res;
+    backtrack(board, 0, 0);
     return;
 }
 
