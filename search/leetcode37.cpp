@@ -55,7 +55,6 @@ bool backtrack(vector<vector<char>>& board, int m, int n){
 }
 
 void solveSudoku(vector<vector<char>>& board){
-    vector<vector<char>> res;
     backtrack(board, 0, 0);
     return;
 }
