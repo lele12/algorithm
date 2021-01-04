@@ -9,33 +9,20 @@ using namespace std;
 
 vector<vector<string>> findLadders(string beginWord, string endWord, vector<string>& wordList){
     set<string> word_list(wordList.begin(), wordList.end());
-    map<char, string> word_list_map;
-    map<string, string> word_list_index;
-    for (int i = 0; i < wordList.size(); i++){
-        word_list_map['0' + i] = wordList[i];
-        word_list_index[wordList[i]] = to_string(i);
-    }
-    queue<string> q;
+    queue<vector<string>> q;
     set<string> visited;
-    int step = 0;
-    string begin = "a";
-    q.push(begin);
+    q.push({beginWord});
     visited.insert(beginWord);
-    vector<string> ans;
+    vector<vector<string>> res;
     while(!q.empty()){
         int q_size = q.size();
         vector<string> tmp;
         for (int i = 0; i < q_size; i++){
-            string index = q.front();
+            vector<string> road = q.front();
             q.pop();
-            string cur;
-            if (index[index.size()-1] == 'a'){
-                cur = beginWord;
-            }else{
-                cur = word_list_map[index[index.size() - 1]];
-            }
+            string cur = road[road.size()-1];
             if (cur == endWord){
-                ans.push_back(index);
+                res.push_back(road);
             }
             
             for (int j = 0; j < cur.size(); j++){
@@ -46,7 +33,9 @@ vector<vector<string>> findLadders(string beginWord, string endWord, vector<stri
                         continue;
                     }
                     if (visited.find(new_word) == visited.end()){
-                        q.push(index + word_list_index[new_word]);
+                        vector<string> ss(road);
+                        ss.push_back(new_word);
+                        q.push(ss);
                         tmp.push_back(new_word);             
                     }
                 }
@@ -56,21 +45,9 @@ vector<vector<string>> findLadders(string beginWord, string endWord, vector<stri
         for(auto t:tmp){
             visited.insert(t);
         }
-        if (ans.size() > 0){
+        if (res.size() > 0){
             break;
         }
-    }
-    vector<vector<string>> res;
-    for (int i = 0; i < ans.size(); i++){
-        vector<string> re;
-        for (int j = 0; j < ans[i].size(); j++){
-            if (ans[i][j] == 'a'){
-                re.push_back(beginWord);
-            }else{
-                re.push_back(word_list_map[ans[i][j]]);
-            }
-        }
-        res.push_back(re);
     }
     return res;
 }
