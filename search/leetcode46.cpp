@@ -55,7 +55,7 @@ vector<vector<int>> permute(vector<int>& nums){
 }
 
 int main(){
-    vector<int> nums= {1, 2, 3};
+    vector<int> nums= {1,3, 2};
     vector<vector<int>> ans = permute(nums);
     for (int i = 0; i < ans.size(); i++){
         for (int j = 0; j < ans[i].size(); j++){
