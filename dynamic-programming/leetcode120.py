@@ -23,3 +23,7 @@ class Solution:
                 for idx in range(len(triangle[layer_idx])):
                     dp[layer_idx][idx] = min(dp[layer_idx+1][idx], dp[layer_idx+1][idx+1]) + dp[layer_idx][idx]
         return dp[0][0]
+
+    def minimumTotal_2(self, triangle: List[List[int]]) -> int:
+        # TODO
+        pass
